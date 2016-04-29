@@ -1,4 +1,4 @@
-# Angular 2/TypeScript/Redux/Webpack Starter
+# Angular 2/TypeScript/Redux/Webpack Starter App
 
 This is the initial version of our starter project using Angular 2.x, Redux, TypeScript and Webpack to tie it all together.
 
