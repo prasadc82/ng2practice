@@ -11,6 +11,7 @@ import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'repo-finder',
   template: require('./repo-finder.tmpl.html'),
+  styleUrls:['src/components/repo-finder.css'],
   providers: [RepoList]
 })
 export class RepoFinder {
