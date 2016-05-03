@@ -4,20 +4,19 @@
   
   <div class="row top-padding-25">
     <div class="form-group col-xs-6">
-      <repo-finder placeholder="Angular Repo" (stats)="statsLeft = $event"></repo-finder>
+      <repo-finder placeholder="Repo One" (stats)="statsLeft = $event"></repo-finder>
     </div>
     <div class="form-group col-xs-6">
-      <repo-finder placeholder="React Repo" (stats)="statsRight = $event"></repo-finder>
+      <repo-finder placeholder="Repo Two" (stats)="statsRight = $event"></repo-finder>
     </div>
-    <!--<button class="btn btn-primary btn-sm col-xs-offset-3 col-xs-6" type="submit">Compare</button>-->
   </div>
   
   <div class="row padding-stats">
     <!-- Repo 1 Stats -->
-    <div class="col-xs-5 border-solid-black-1">
-      <ul class="list-unstyled" *ngIf="statsLeft">
+    <div class="col-xs-6 border-solid-black-1 wrap" *ngIf="statsLeft">
+      <ul class="list-unstyled">
         <li>Owner: {{statsLeft.owner.login}}</li>
-        <li>Repo URL: {{statsLeft.url}}</li>
+        <li>Repo URL: <a href="{{statsLeft.html_url}}">{{statsLeft.html_url}}</a></li>
         
         <li>Stars: {{statsLeft.stargazers_count}}</li>
         <li>Forks: {{statsLeft.forks_count}}</li>
@@ -26,10 +25,10 @@
     </div>
 
     <!-- Repo 2 Stats -->
-    <div class="col-xs-offset-2 col-xs-5 border-solid-black-1">
-      <ul class="list-unstyled" *ngIf="statsRight">
+    <div class="col-xs-6 border-solid-black-1" *ngIf="statsRight">
+      <ul class="list-unstyled">
         <li>Owner: {{statsRight.owner.login}}</li>
-        <li>Repo URL: {{statsRight.url}}</li>
+        <li>Repo URL: <a href="{{statsLeft.html_url}}">{{statsRight.html_url}}</a></li>
 
         <li>Stars: {{statsRight.stargazers_count}}</li>
         <li>Forks: {{statsRight.forks_count}}</li>
