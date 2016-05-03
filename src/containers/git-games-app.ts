@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RepoFinder} from './repo-finder';
+import {RepoFinder} from '../components/repo-finder';
 
 @Component({
   selector: 'git-games-app',
@@ -8,5 +8,4 @@ import {RepoFinder} from './repo-finder';
   directives: [RepoFinder] 
 })
 export class GitGamesApp {
-  // stats:any = {};
 };
