@@ -73,7 +73,7 @@ const postcssPlugins = postcssBasePlugins
 
 module.exports = {
   entry: {
-    app: './src/index.ts',
+    app: './src/index1.ts',
   },
 
   output: {
@@ -104,12 +104,17 @@ module.exports = {
     loaders: [
       loaders.ts,
       loaders.html,
-      loaders.css,
-      loaders.svg,
-      loaders.eot,
-      loaders.woff,
-      loaders.woff2,
-      loaders.ttf
+      // loaders.css,
+      // loaders.svg,
+      // loaders.eot,
+      // loaders.woff,
+      // loaders.woff2,
+      // loaders.ttf,
+        { test: /\.css$/, loader: 'style!css' },
+        { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+        { test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
+        {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
+        {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
     ],
     noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/ ]
   },

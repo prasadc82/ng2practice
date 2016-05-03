@@ -1,0 +1,17 @@
+.top-padding-25 {
+  padding-top: 25px;
+}
+
+.left-margin-2 {
+  margin-left: 2px;
+}
+
+.border-solid-black-1 {
+  border: 0.5px solid black;
+}
+
+.padding-stats {
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
