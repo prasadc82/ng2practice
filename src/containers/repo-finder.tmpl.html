@@ -1,5 +1,8 @@
 <input type="text" #finder class="form-control" placeholder="{{placeholder}}" [ngFormControl]="repoNameStartsWith">
-<ul>
-  <!--<li *ngFor="#repo of repos | async">{{repo.name}}</li>-->
-  <li *ngFor="#repo of repos | async" (click)="stats.emit(repo)">{{repo.name}}</li>
+<ul class="padding-stats list-unstyled"> 
+  <li *ngFor="#repo of repos | async; #i=index" (click)="stats.emit(repo)"> <!-- *ngIf="i<10"> -->
+    <template [ngIf]="i<10">
+      {{repo.name}}
+    </template>
+  </li>
 </ul>

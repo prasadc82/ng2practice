@@ -26,10 +26,7 @@ export class RepoFinder {
                           .debounceTime(400)
                           .distinctUntilChanged()
                           .switchMap((repoNameStartsWith:string) => {
-                            return this._repoList.getRepos(repoNameStartsWith)
+                            return this._repoList.getRepos(repoNameStartsWith);
                           });
-                          
-    // this.repoName.valueChanges.debounceTime(200).subscribe(() => this.stats.emit({ forks: 4}));                          
-                          
   };
 };
