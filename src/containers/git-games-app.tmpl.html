@@ -1,23 +1,23 @@
 <div class="container-fluid">
-  
+
   <h1 class="text-center">GitGames</h1>
-  
+
   <div class="row top-padding-25">
     <div class="form-group col-xs-6">
-      <repo-finder placeholder="Repo One" (stats)="statsLeft = $event"></repo-finder>
+      <repo-finder placeholder="Repo One" (stats)="statsLeft = $event">
+      </repo-finder>
     </div>
     <div class="form-group col-xs-6">
       <repo-finder placeholder="Repo Two" (stats)="statsRight = $event"></repo-finder>
     </div>
   </div>
-  
+
   <div class="row padding-stats">
     <!-- Repo 1 Stats -->
     <div class="col-xs-6 border-solid-black-1 wrap" *ngIf="statsLeft">
       <ul class="list-unstyled">
         <li>Owner: {{statsLeft.owner.login}}</li>
         <li>Repo URL: <a href="{{statsLeft.html_url}}">{{statsLeft.html_url}}</a></li>
-        
         <li>Stars: {{statsLeft.stargazers_count}}</li>
         <li>Forks: {{statsLeft.forks_count}}</li>
         <li>Watchers: {{statsLeft.watchers_count}}</li>
@@ -29,11 +29,10 @@
       <ul class="list-unstyled">
         <li>Owner: {{statsRight.owner.login}}</li>
         <li>Repo URL: <a href="{{statsLeft.html_url}}">{{statsRight.html_url}}</a></li>
-
         <li>Stars: {{statsRight.stargazers_count}}</li>
         <li>Forks: {{statsRight.forks_count}}</li>
         <li>Watchers: {{statsRight.watchers_count}}</li>
-      </ul>        
+      </ul>
     </div>
   </div>
 </div>
