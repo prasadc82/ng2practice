@@ -1,0 +1,5 @@
+<input type="text" #finder class="form-control" placeholder="{{placeholder}}" [ngFormControl]="repoNameStartsWith">
+<ul>
+  <!--<li *ngFor="#repo of repos | async">{{repo.name}}</li>-->
+  <li *ngFor="#repo of repos | async" (click)="stats.emit(repo)">{{repo.name}}</li>
+</ul>

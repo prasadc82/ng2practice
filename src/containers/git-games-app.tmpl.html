@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  
+  <h1 class="text-center">GitGames</h1>
+  
+  <div class="row top-padding-25">
+    <div class="form-group col-xs-5">
+      <repo-finder placeholder="Angular Repo" (stats)="stats = $event"></repo-finder>
+    </div>
+    <div class="form-group col-xs-5 col-xs-offset-2">
+      <repo-finder placeholder="React Repo" (stats)="stats = $event"></repo-finder>
+    </div>
+    <button class="btn btn-primary btn-sm col-xs-offset-3 col-xs-6" type="submit">Compare</button>
+  </div>
+  
+  <div class="row padding-stats">
+    <!-- Repo 1 Stats -->
+    <div class="col-xs-5 border-solid-black-1">
+      <ul class="list-unstyled" *ngIf="stats">
+        <li>{{stats.forks}}</li>
+      </ul>
+    </div>
+
+    <!-- Repo 2 Stats -->
+    <div class="col-xs-offset-2 col-xs-5 border-solid-black-1">
+      <ul class="list-unstyled">
+        <li></li>
+      </ul>        
+    </div>
+  </div>
+</div>
