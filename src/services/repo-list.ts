@@ -13,7 +13,7 @@ export class RepoList {
     
     let search = new URLSearchParams();
     // Setting params
-    search.set('q', startsWith || 'sample');
+    search.set('q', startsWith); //  || 'sample');
     search.set('language', 'javascript');
     search.set('format', 'json');
     search.set('sort', 'stars');
@@ -25,10 +25,9 @@ export class RepoList {
                 .map(
                   (response) => response.json().items
                   )
-                  .toPromise()
                 .catch((err) => {
-                  console.error('Error: ' + err);
-                  return [];
+                  console.error('Error: ' + err.json().message);
+                  return Observable.of([]);
                 });
   }
 }
