@@ -4,11 +4,11 @@
 
   <div class="row top-padding-25">
     <div class="form-group col-xs-6">
-      <repo-finder placeholder="Repo One" (stats)="statsLeft = $event">
+      <repo-finder [datalistId]="'one'" placeholder="Repo One" (stats)="statsLeft = $event">
       </repo-finder>
     </div>
     <div class="form-group col-xs-6">
-      <repo-finder placeholder="Repo Two" (stats)="statsRight = $event"></repo-finder>
+      <repo-finder [datalistId]="'two'" placeholder="Repo Two" (stats)="statsRight = $event"></repo-finder>
     </div>
   </div>
 

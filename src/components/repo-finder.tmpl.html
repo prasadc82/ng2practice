@@ -1,10 +1,24 @@
-<input type="text" #finder class="form-control" placeholder="{{placeholder}}" [ngFormControl]="repoNameStartsWith">
+<input #listMain type="text" list="one"
+  (keypress)="searchRepo(listMain.value)"
+  (change)="stats.emit(listMain.value)"
+  class="form-control"/>
+<input type='hidden'
+(input)="searchRepo(listMain.value)"
+ placeholder="{{placeholder}}"
+[(ngModel)]="repoNameStartsWith"
+/>
+
 <div class="padding-repo-list">
-  <ul class="list-unstyled"> 
-    <li *ngFor="#repo of repos | async; #i=index" (click)="stats.emit(repo)"> <!-- *ngIf="i<10"> -->
-      <template [ngIf]="i<10">
+  <ul class="list-unstyled">
+    <li *ngFor="let repo of repos | async" (click)="stats.emit(repo)"> <!-- *ngIf="i<10"> -->
+      <template>
         <a href="#">{{repo.name}}</a>
       </template>
     </li>
   </ul>
+
+  <datalist [id]="datalistId">
+    <option *ngFor="let repo of repos | async" [value]="repo.name">
+  </datalist>
+
 </div>
