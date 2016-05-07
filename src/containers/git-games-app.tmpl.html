@@ -12,9 +12,11 @@
     </div>
   </div>
 
-  <div class="row padding-stats">
+  <div class="row">
     <!-- Repo 1 Stats -->
-    <div class="col-xs-6 border-solid-black-1 wrap" *ngIf="statsLeft">
+    <div class="col-xs-6 " *ngIf="statsLeft">
+      <div class="well">
+
       <ul class="list-unstyled">
         <li>Owner: {{statsLeft.owner.login}}</li>
         <li>Repo URL: <a href="{{statsLeft.html_url}}">{{statsLeft.html_url}}</a></li>
@@ -22,10 +24,14 @@
         <li>Forks: {{statsLeft.forks_count}}</li>
         <li>Watchers: {{statsLeft.watchers_count}}</li>
       </ul>
+      </div>
+
     </div>
 
     <!-- Repo 2 Stats -->
-    <div class="col-xs-6 border-solid-black-1" *ngIf="statsRight">
+    <div class="col-xs-6 " *ngIf="statsRight">
+
+     <div class="well">
       <ul class="list-unstyled">
         <li>Owner: {{statsRight.owner.login}}</li>
         <li>Repo URL: <a href="{{statsLeft.html_url}}">{{statsRight.html_url}}</a></li>
@@ -33,6 +39,9 @@
         <li>Forks: {{statsRight.forks_count}}</li>
         <li>Watchers: {{statsRight.watchers_count}}</li>
       </ul>
+     </div>
+
+
     </div>
   </div>
 </div>
