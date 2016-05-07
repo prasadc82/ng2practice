@@ -11,23 +11,35 @@ import 'rxjs/add/operator/switchMap';
 @Component({
   selector: 'repo-finder',
   template: require('./repo-finder.tmpl.html'),
-  styleUrls:['src/components/repo-finder.css'],
+  styleUrls: ['src/components/repo-finder.css'],
   providers: [RepoList]
 })
 export class RepoFinder {
-  @Input() placeholder : string;
+  @Input() placeholder: string;
   @Output() stats = new EventEmitter();
-  
+
+  selectedRepo: any = '';
+
   repos: Observable<Array<string>>;
   repoNameStartsWith = new Control();
   repoName = new Control();
-  
-  constructor(private _repoList: RepoList){
+
+  constructor(private _repoList: RepoList) {
     this.repos = this.repoNameStartsWith.valueChanges
-                          .debounceTime(400)
-                          .distinctUntilChanged()
-                          .switchMap((repoNameStartsWith:string) => {
-                            return this._repoList.getRepos(repoNameStartsWith);
-                          });
-  };
-};
+      .debounceTime(400)
+      .distinctUntilChanged()
+      .switchMap((repoNameStartsWith: string) => {
+        return this._repoList.getRepos(repoNameStartsWith);
+      });
+  }
+
+ isActive(repo: any) {
+   return repo.name ;
+ }
+
+ selectAndEmitRepo(repo: any){
+   this.selectedRepo = repo;
+   this.stats.emit(repo);
+ }
+
+}

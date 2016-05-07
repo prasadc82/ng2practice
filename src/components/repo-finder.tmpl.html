@@ -1,8 +1,10 @@
 <input type="text" #finder class="form-control" placeholder="{{placeholder}}" [ngFormControl]="repoNameStartsWith">
 <div class="padding-repo-list">
-  <ul class="list-unstyled">
-    <li *ngFor="let repo of repos | async" (click)="stats.emit(repo)"> <!-- *ngIf="i<10"> -->
-        <a href="#">{{repo.name}}</a>
+  <ul class="nav nav-pills nav-stacked">
+    <li *ngFor="let repo of repos | async"
+      [class.active]="repo == selectedRepo"
+      (click)="selectAndEmitRepo(repo)">
+        <a href="#" >{{repo.name}}</a>
     </li>
   </ul>
 </div>
