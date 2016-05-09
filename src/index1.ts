@@ -3,7 +3,7 @@ import 'es6-shim';
 import 'es6-promise';
 import '../shims/shims_for_IE';
 
-import 'bootstrap/dist/css/bootstrap.css';
+require('bootstrap/dist/css/bootstrap.min.css');
 
 import 'angular2/bundles/angular2-polyfills';
 
