@@ -14,7 +14,7 @@
 
   <div class="row">
     <!-- Repo 1 Stats -->
-    <div class="col-xs-6 " *ngIf="statsLeft">
+    <div class="col-xs-6 " *ngIf="!isStatsEmpty(statsLeft)">
       <div class="well">
 
       <ul class="list-unstyled">
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Repo 2 Stats -->
-    <div class="col-xs-6 " *ngIf="statsRight">
+    <div class="col-xs-6 " *ngIf="!isStatsEmpty(statsRight)">
 
      <div class="well">
       <ul class="list-unstyled">
