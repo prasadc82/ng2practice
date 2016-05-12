@@ -29,6 +29,10 @@ export class RepoFinder {
       .debounceTime(400)
       .distinctUntilChanged()
       .switchMap((repoNameStartsWith: string) => {
+        // if nothing is typed OR deleted the contents of input
+        if (repoNameStartsWith === ''){
+          this.stats.emit({});
+        }
         return this._repoList.getRepos(repoNameStartsWith);
       });
   }

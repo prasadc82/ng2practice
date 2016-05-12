@@ -8,4 +8,11 @@ import {RepoFinder} from '../components/repo-finder';
   directives: [RepoFinder] 
 })
 export class GitGamesApp {
+  // Check for empty objects
+  isStatsEmpty(input){
+    if (input){
+      return Object.keys(input).length === 0;
+    }
+    return true;
+  }
 };
